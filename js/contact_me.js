@@ -3,6 +3,7 @@ $(function() {
   $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
     preventSubmit: true,
     submitError: function($form, event, errors) {
+      console.log("Validation failed!")
       // additional error messages or events
     },
     submitSuccess: function($form, event) {
@@ -31,6 +32,7 @@ $(function() {
         cache: false,
         success: function() {
           // Success message
+          console.log("message sent")
           $('#success').html("<div class='alert alert-success'>");
           $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
@@ -43,6 +45,7 @@ $(function() {
         },
         error: function() {
           // Fail message
+          console.log("There was an error in sending message");
           $('#success').html("<div class='alert alert-danger'>");
           $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
